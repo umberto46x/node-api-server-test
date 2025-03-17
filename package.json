@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
+    "build": "npx tsc",
     "start": "cp .env.development .env && npm run build && node ./dist/app.js",
     "test": "cp .env.test .env && npm run build && mocha ./dist/tests/*.js"
   },
@@ -26,6 +26,7 @@
     "mocha": "^11.1.0",
     "mongoose": "^8.10.1",
     "supertest": "^7.0.0",
+    "typescript": "^5.8.2",
     "uuid": "^11.1.0"
   },
   "devDependencies": {
