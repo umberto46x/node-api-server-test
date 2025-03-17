@@ -21,6 +21,12 @@ app.get("/status", (_, res) => {
 
 app.listen(3000, async () => {
   console.log("Server is running");
-  await mongoose.connect(`mongodb://127.0.0.1:27017/${process.env.DB}}`);
+
+  if (process.env.current === "production"){
+    await mongoose.connect("mongodb+srv://theumberto46:<db_password>@cluster0.bsebf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0")  
+  }else{
+      await mongoose.connect(`mongodb://127.0.0.1:27017/${process.env.DB}}`);
   console.log("Db is connected!");
+  }
+
 });
